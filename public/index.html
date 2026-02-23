@@ -17,6 +17,7 @@
                 },
                 slotMinTime: '00:00:00',
                 slotMaxTime: '24:00:00',
+                scrollTime: '08:00:00',
                 height: "auto",
                 nowIndicator: true,
                 allDaySlot: false,
@@ -24,7 +25,11 @@
                     left: 'prev,next today',
                     center: 'title',
                     right: 'timeGridWeek,timeGridDay'
-                }
+                },
+                eventDidMount: function(info) {
+                    // This adds the full title as a "hover" hint
+                    info.el.title = info.event.title;
+                },
             });
             calendar.render();
         });
@@ -69,6 +74,19 @@
             border-radius: 6px;
             padding: 2px 4px;
             font-weight: 500;
+        }
+        .fc-event-title {
+            font-size: 0.85em;      /* Slightly smaller text */
+            font-weight: 600;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        /* Make the event blocks slightly transparent so overlapping labs look cool */
+        .fc-v-event {
+            opacity: 0.9;
+            border: none !important;
+            box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
         }
     </style>
 </head>
