@@ -7,7 +7,7 @@ if (!radPassword) {
 }
 async function sanitizeCalendar() {
     // Replace the URL with your actual Radicale calendar URL
-    const res = await fetch('http://127.0.0.1:5232/ispik/your-calendar-id/', {
+    const res = await fetch('http://127.0.0.1:5232/ispik/d6ca794b-3f9a-05f7-b841-0dc37c99dc78/', {
         headers: {
             'Authorization': 'Basic ' + Buffer.from(`ispik:${radPassword}`).toString('base64')
         }
