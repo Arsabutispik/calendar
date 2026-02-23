@@ -28,8 +28,46 @@
         });
     </script>
     <style>
-        body { font-family: sans-serif; background: #f4f4f5; padding: 20px; }
-        #calendar { max-width: 1000px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        :root {
+            /* Soften the grid borders */
+            --fc-border-color: #e5e7eb;
+            --fc-today-bg-color: #f8fafc;
+            --fc-neutral-bg-color: #f3f4f6;
+
+            /* Modernize the buttons */
+            --fc-button-bg-color: #3b82f6;
+            --fc-button-border-color: #3b82f6;
+            --fc-button-hover-bg-color: #2563eb;
+            --fc-button-hover-border-color: #2563eb;
+            --fc-button-active-bg-color: #1d4ed8;
+
+            /* Style the class events */
+            --fc-event-bg-color: #ecfeff;
+            --fc-event-border-color: #06b6d4;
+            --fc-event-text-color: #083344;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: #f4f4f5;
+            padding: 20px;
+        }
+
+        #calendar {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Round the event blocks slightly */
+        .fc-event {
+            border-radius: 6px;
+            padding: 2px 4px;
+            font-weight: 500;
+        }
     </style>
 </head>
 <body>
