@@ -1,17 +1,13 @@
 const fs = require('fs');
-const radPassword = process.env.RADICALE_PASSWORD;
+const protonUrl = process.env.PROTON_CALENDAR_URL;
 
-if (!radPassword) {
-    console.error("Error: RADICALE_PASSWORD environment variable is not set.");
+if (!protonUrl) {
+    console.error("Error: PROTON_CALENDAR_URL environment variable is not set.");
     process.exit(1);
 }
 async function sanitizeCalendar() {
     // Replace the URL with your actual Radicale calendar URL
-    const res = await fetch('http://127.0.0.1:5232/ispik/dailyschedule/', {
-        headers: {
-            'Authorization': 'Basic ' + Buffer.from(`ispik:${radPassword}`).toString('base64')
-        }
-    });
+    const res = await fetch(protonUrl);
 
     if (!res.ok) throw new Error(`HTTP Error: ${res.status}`);
 
