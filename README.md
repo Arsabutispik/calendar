@@ -1,0 +1,1 @@
+This project is for my calendar so people can publicly view what I am doing any given moment at calendar.ispik.dev

@@ -1,0 +1,13 @@
+services:
+  radicale:
+    image: tomsquest/docker-radicale
+    container_name: radicale
+    ports:
+      - "127.0.0.1:5232:5232" # Bound to localhost for security
+    volumes:
+      - ./data:/data
+    environment:
+      - RADICALE_AUTH_TYPE=htpasswd
+      - RADICALE_AUTH_HTPASSWD_FILENAME=/data/users
+      - RADICALE_AUTH_HTPASSWD_ENCRYPTION=bcrypt
+    restart: unless-stopped
